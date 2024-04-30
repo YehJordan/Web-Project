@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="/project.css">
+    <title>Happy Home Animals</title>
+</head>
+<body>
+    <!-- Include header -->
+    <%- include('header'); %>
+
+    
+        <!--Start of nav bar-->
+        
+    <%- include('navigation'); %>
+        <!--End of the nav bar-->
+
+        <!--Start of Content section-->
+    <div class="content">
+        <h3>Login</h3>
+        <br>
+        <form id="loginForm" action="/login" method="post">
+            <fieldset>
+                <legend>Please enter your information below:</legend>
+                <h1>Username and Password</h1>
+        <label for="nameInput">Username</label>
+        <input type="text" id="nameInput" name="person" required>
+        <br>
+        <br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" pattern="^(?=.*[a-zA-Z])(?=.*\d).{4,}$" required>
+        <br><br>
+        <button type="submit" class="button">Login</button>
+            </fieldset>
+        </form>
+    </div>
+        <!--End of the Content section-->
+
+    <!-- Include footer -->
+    <%- include('footer'); %>
+</body>
+</html>

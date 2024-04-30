@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="/project.css">
+    <title>Happy Home Animals</title>
+</head>
+<body>
+    <!-- Include header -->
+    <%- include('header'); %>
+
+    
+        <!--Start of nav bar-->
+        
+    <%- include('navigation'); %>
+        <!--End of the nav bar-->
+
+        <div class="content">
+            <h3>Set Up for Adoption Form</h3>
+            <form id="petForm" action="/petsubmission" method="post">
+            <fieldset>
+
+                <p class="choice">Would you like to give cat or a dog?<br>
+                    <label><input type="radio" id="cat" value="cat" name="AnimalChoice">Cat</label>
+                    <label><input type="radio" id="dog" value="dog" name="AnimalChoice">Dog</label>
+                </p>
+
+                <p class="choice">Which breed would your given pet be?<br>
+                    <select name="breed" id="breed">
+                        <optgroup label="Cat Breeds">
+                            <option value="Siamese">Siamese</option>
+                            <option value="Tonkinese">Tonkinese</option>
+                            <option value="Sphynx">Sphynx</option>
+                        </optgroup>
+                        <optgroup label="Dog Breeds">
+                            <option value="Dachshund">Dachshund</option>
+                            <option value="Chihuahua">Chihuahua</option>
+                            <option value="Golden Retriever">Golden Retriever</option>
+                        </optgroup>
+                     </select>
+                </p>
+
+                <p class="choice">What is the age range of your given pet?<br>
+                    <select name="Age" id="ageRange">
+                        <optgroup label="Select age range">
+                            <option value="0-5">0-5</option>
+                            <option value="5-10">5-10</option>
+                            <option value="10-15">10-15</option>
+                        </optgroup>
+                    </select>
+                </p>
+                
+                <p class="choice">What gender is your pet?<br>
+                    <label><input type="radio" id="Male" name="gender" value="Male">Male</label>
+                    <label><input type="radio" id="Female" name="gender" value="Female">Female</label>
+                </p>
+
+                <p class="choice">What kind of behaviour does your pet have?<br>
+                    <label><input type="checkbox" name="behaviour" id="goodChild" value="goodChild">Gets along with children</label>
+                    <label><input type="checkbox" name="behaviour" id="goodDog" value="goodDog">Gets along with other dogs</label>
+                    <label><input type="checkbox" name="behaviour" id="goodCat" value="goodCat">Gets along with other cats</label>
+                </p>
+
+                <p class="choice">What are key features of your given pet? (optional)<br>
+                    <textarea name="features" rows="5" cols="50"></textarea>
+                </p>
+
+                <p class="choice">Picture of your pet
+                    <input type="file" name="petImage" accept=".png, .jpg, .jpeg, .gif">
+                </p>
+
+                <label>Pet Name:</label>
+                <input type="text" id="firstName" name="firstName"> <br><br>
+
+                <label>Email</label>
+                <input type="email" id="email" name="emailAddress">
+
+            </fieldset>
+
+            <p>Your pet has been successfully been set for adoption. Thank you!</p>
+            <input type="reset">
+            <input type="submit" onclick="givePet(event)">
+            
+        </form>
+        <br>
+        </div>
+
+
+    <!-- Include footer -->
+    <%- include('footer'); %>
+</body>
+</html>

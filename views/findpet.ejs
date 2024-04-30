@@ -1,0 +1,41 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/project.css">
+    <title>Find Pet Results</title>
+</head>
+<body>
+     <!-- Include header -->
+     <%- include('header'); %>
+
+    
+     <!--Start of nav bar-->
+    <%- include('navigation'); %>
+
+    <div class="content">
+    <h3>Results</h3>
+
+    <% if (pets.length > 0) { %>
+       
+                <% pets.forEach(pet => { %>
+                    <div class="rectangle">
+                        <p class="petName"><%= pet.firstName %></p>
+                        <img class="petImage" src="/uploads/<%= pet.petImage %>" alt="No image provided">
+                        <p><b>Breed: </b><%= pet.breed %></p>
+                        <p><b>Age: </b><%= pet.ageRange %></p>
+                        <p><b>Gender: </b><%= pet.gender %></p>
+                        <p><b>Good with: </b><%= pet.behavior %></p>
+                        <p><b>Key features: </b><%= pet.features %></p>
+                        <p><b>Email: </b><%= pet.email %></p>
+                    </div>
+                <% }); %>
+    <% } else { %>
+        <p>No pets found matching the search criteria.</p>
+    <% } %>
+    </div>
+</body>
+</html>
